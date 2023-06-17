@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.lang.annotation.*;
 
 @JacksonAnnotationsInside
-@JsonSerialize(using = MaskDataSerializer.class)
+@JsonSerialize(using = ProtectDataSerializer.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MaskData {

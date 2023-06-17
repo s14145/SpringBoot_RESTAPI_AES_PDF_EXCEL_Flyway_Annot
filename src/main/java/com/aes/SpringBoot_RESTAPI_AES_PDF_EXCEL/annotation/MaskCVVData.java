@@ -6,10 +6,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.lang.annotation.*;
 
 @JacksonAnnotationsInside
-//@JsonSerialize(using = MaskCVVDataSerializer.class)
+@JsonSerialize(using = MaskCVVDataSerializer.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface MaskCVVData {
-    String value() default "XXX";
 }
