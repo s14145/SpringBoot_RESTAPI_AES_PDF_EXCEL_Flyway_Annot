@@ -1,4 +1,8 @@
- https://progress-bar.dev/60/?title=progress
+ ![GitHub repo size](https://img.shields.io/github/repo-size/s14145/SpringBoot_RESTAPI_AES_PDF_EXCEL_Flyway_Annot)
+ ![GitHub last commit](https://img.shields.io/github/last-commit/s14145/SpringBoot_RESTAPI_AES_PDF_EXCEL_Flyway_Annot)
+ ![GitHub followers](https://img.shields.io/github/followers/s14145?style=social)
+ ![GitHub](https://img.shields.io/github/license/s14145/SpringBoot_RESTAPI_AES_PDF_EXCEL_Flyway_Annot)
+ ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/s14145/SpringBoot_RESTAPI_AES_PDF_EXCEL_Flyway_Annot)
 
 # Spring Boot REST API Using AES, PDF, EXCEL, Flyway, Custom Annotation
 
