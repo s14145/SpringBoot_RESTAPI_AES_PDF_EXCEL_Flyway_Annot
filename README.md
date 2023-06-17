@@ -3,6 +3,7 @@
  ![GitHub followers](https://img.shields.io/github/followers/s14145?style=social)
  ![GitHub](https://img.shields.io/github/license/s14145/SpringBoot_RESTAPI_AES_PDF_EXCEL_Flyway_Annot)
  ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/s14145/SpringBoot_RESTAPI_AES_PDF_EXCEL_Flyway_Annot)
+ ![Generic badge](https://img.shields.io/badge/completion-65%25-green)
 
 # Spring Boot REST API Using AES, PDF, EXCEL, Flyway, Custom Annotation
 
