@@ -16,6 +16,7 @@ The technologies used in this application are:
 8. Flyway Database Migration Tool
 9. Jackson Library
 10. Masking PII (Personally Identifiable Information)/PCI (Payment Card Information) Data
+11. Java Version 20
 
 H2 Database URI: http://localhost:7070/h2-console
 
