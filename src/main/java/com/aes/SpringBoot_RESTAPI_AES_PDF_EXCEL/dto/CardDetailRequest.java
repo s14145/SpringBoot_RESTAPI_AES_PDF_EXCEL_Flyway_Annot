@@ -8,9 +8,10 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CardDetailRequest {
     private String cardNumber;
-    private Integer cvv;
+    private String cvv;
     private Double amount;
     private Boolean isActive;
 }

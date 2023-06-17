@@ -14,7 +14,7 @@
 	<name>SpringBoot_RESTAPI_AES_PDF_EXCEL</name>
 	<description>Spring Boot REST API Using AES, PDF, EXCEL</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>20</java.version>
 		<spring-cloud.version>2021.0.7</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -55,13 +55,9 @@
 			<version>2.15.0</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>8.0.0.Final</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>3.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

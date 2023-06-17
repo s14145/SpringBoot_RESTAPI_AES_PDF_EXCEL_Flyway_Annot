@@ -15,7 +15,7 @@ public class CardDetailResponse {
 
     private Long cardId;
     private String cardNumber;
-    private Integer cvv;
+    private String cvv;
     private Double amount;
     private Boolean isActive;
 }

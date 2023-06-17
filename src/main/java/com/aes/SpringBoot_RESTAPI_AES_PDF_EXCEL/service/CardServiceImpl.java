@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service("CardServiceImpl")
 @Slf4j
 public class CardServiceImpl implements CardDetailService{
 

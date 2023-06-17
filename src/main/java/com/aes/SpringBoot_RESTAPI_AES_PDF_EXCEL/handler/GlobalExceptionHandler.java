@@ -1,10 +1,9 @@
 package com.aes.SpringBoot_RESTAPI_AES_PDF_EXCEL.handler;
 
-
-
 import com.aes.SpringBoot_RESTAPI_AES_PDF_EXCEL.dto.ErrorMessage;
 import com.aes.SpringBoot_RESTAPI_AES_PDF_EXCEL.exception.CardDetailAlreadyExistsException;
 import com.aes.SpringBoot_RESTAPI_AES_PDF_EXCEL.exception.CardDetailNotFoundException;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -37,9 +36,18 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<ErrorMessage> handleConstraintViolationException(ConstraintViolationException ex){
+        ErrorMessage errorMessage = new ErrorMessage();
+        errorMessage.setTimestamp(LocalDateTime.now());
+        errorMessage.setMessage(ex.getLocalizedMessage());
+        errorMessage.setStatus(HttpStatus.BAD_REQUEST.value());
+        return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
+    }
+
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String, String>> handleInvalidException(MethodArgumentNotValidException ex){
+    public ResponseEntity<Map<String, String>> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex){
 
         Map<String, String> errorMap = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach(err -> {
@@ -51,11 +59,11 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorMessage> handleExistsException(Exception ex){
+    public ResponseEntity<ErrorMessage> handleException(Exception ex){
         ErrorMessage errorMessage = new ErrorMessage();
         errorMessage.setTimestamp(LocalDateTime.now());
-        errorMessage.setMessage(ex.getMessage());
-        errorMessage.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+        errorMessage.setMessage(ex.getLocalizedMessage());
+        errorMessage.setStatus(HttpStatus.BAD_REQUEST.value());
+        return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
     }
 }

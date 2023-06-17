@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -30,13 +31,13 @@ public class CardDetailController {
     }
 
     @PostMapping
-    public ResponseEntity<CardDetailResponse> saveCardDetail(@RequestBody CardDetailRequest cardDetailRequest){
+    public ResponseEntity<CardDetailResponse> saveCardDetail(@Valid @RequestBody CardDetailRequest cardDetailRequest){
         CardDetailResponse cardDetailResponse = cardDetailService.saveCardDetail(cardDetailRequest);
         return new ResponseEntity<>(cardDetailResponse, HttpStatus.CREATED);
     }
 
     @PutMapping("/{cardId}")
-    public ResponseEntity<CardDetailResponse> updateCardDetail(@PathVariable Long cardId, @RequestBody CardDetailRequest cardDetailRequest){
+    public ResponseEntity<CardDetailResponse> updateCardDetail(@PathVariable Long cardId,@Valid @RequestBody CardDetailRequest cardDetailRequest){
         CardDetailResponse cardDetailResponse = cardDetailService.updateCardDetail(cardId, cardDetailRequest);
         return new ResponseEntity<>(cardDetailResponse, HttpStatus.OK);
     }

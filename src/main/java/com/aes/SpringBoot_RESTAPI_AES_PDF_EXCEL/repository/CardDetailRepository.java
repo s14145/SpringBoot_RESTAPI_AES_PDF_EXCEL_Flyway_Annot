@@ -2,8 +2,6 @@ package com.aes.SpringBoot_RESTAPI_AES_PDF_EXCEL.repository;
 
 import com.aes.SpringBoot_RESTAPI_AES_PDF_EXCEL.entity.CardDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository("CardDetailRepository")
